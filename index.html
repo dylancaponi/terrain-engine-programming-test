@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@578619f00b6060d5d1b9a30c6a726b150fd080f8/dist/aframe-master.min.js" ></script>
+    <!--
+    change source files to the exercise JS files and complete each exercise
+
+    Start by reading examples and learning how things work
+    -->
+    <script src="./example-one.js" type="module"></script>
+
+    <script type="module" defer>
+
+      let bodyHTML = `
+      <div id="notification">
+        <p>Click and hold to look around, WASD to move. </p>
+      </div>
+
+      <a-scene terrain-system stats fog="type: linear; color: #2D9CDB; far:600;" rotation="0 0 0">
+        <a-sky color="#121212"></a-sky>
+
+        <a-camera id="camera-rig" position="90 135 -100"  look-controls wasd-controls="fly:true; acceleration:150;" fov="80"></a-camera>
+      </a-scene>
+      `
+
+      //The main HTML string is added to the body here so that this happens after our application module has been loaded.
+      //This is required to ensure that the init function is called on components.
+      document.querySelector('body').innerHTML = bodyHTML
+    </script>
+    <style>
+      #notification {
+        position: absolute;
+        	top: 0px;
+        	width: 100%;
+        	padding: 10px;
+        	box-sizing: border-box;
+        	text-align: center;
+          color: white;
+        	z-index: 10000; /* TODO Solve this in HTML */
+
+      }
+    </style>
+  </head>
+  <body>
+  </body>
+</html>

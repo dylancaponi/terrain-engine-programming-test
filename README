@@ -1,0 +1,30 @@
+HOW TO RUN
+#########
+1. unzip into a directory
+2. Start a webserver using `python -m SimpleHTTPServer 8000` in the corresponding directory
+3. open browser (chrome) and go to `localhost:8000`
+4. open dev tools so you can see the console output.
+
+
+ABOUT
+#########
+This project is based on Aframe.io (https://aframe.io/docs/1.0.0/introduction/), which is a tool for
+making 3D scenes, games, demos, etc. in the browser.
+
+AFrame is actually a wrapper around THREE.js, which does all the heavy lifting.
+
+You don't need to understand or worry about the details of how THREEjs or Aframe work.
+
+We've provided all the setup and models you need for the project. You can focus entirely on how to make
+the solution.
+
+Everything runs in the browser, no additional setup is needed.
+
+Be sure to read the example code in detail.
+
+HOW TO DO
+#########
+Everything you need for this exercise is documented here in the `example-one.js` file. Read this first.
+
+When you are ready, change line 9 in index.html to exercise-1.js and start on that exercise. Continue for other
+exercises.
