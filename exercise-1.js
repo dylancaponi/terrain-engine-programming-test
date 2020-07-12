@@ -46,6 +46,33 @@ AFRAME.registerComponent('terrain-system', {
     boundingBoxMesh.position.set(size[0]/2, size[1]/2, -size[2]/2)
     this.world.add(boundingBoxMesh)
 
+    // gross hardcoded size limits
+    for (var x = 0; x < 10; x++) {
+       for (var y = 2; y < 7; y++) {
+           for (var z = 0; z < 13; z++) {
+            var fileName = `./models/high/bisect-${x}-${y}-${z}.gltf`
+
+            try {
+                console.log(`loading ${fileName}`)
+                new THREE.GLTFLoader().load(`./models/high/bisect-${x}-${y}-${z}.gltf`, function ({ scene }) {
+
+                    this.world.add(scene)
+
+                  }.bind(this),
+                  function(xhr) {
+                  },
+                  function(error) {
+                  }
+                )
+            }catch(err) {
+                console.log('file no exist');
+            }
+
+            }
+
+       }
+    }
+
 
   },
   tick: function() {
@@ -55,7 +82,7 @@ AFRAME.registerComponent('terrain-system', {
 
     //in Blender and THREEjs the z axis is flipped. I'll fix that for you.
     let pos = {x: camPos.x, y: camPos.y, z: -camPos.z}
-    console.log(pos)
+    // console.log(pos)
 
   }
 })
